@@ -1,0 +1,21 @@
+modules:
+  jira:issuePanel:
+    - key: pipeline-application-hello-world-panel
+      function: main
+      title: pipeline_application
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/c050b7ab-e52c-4925-873b-a74c0d170409
+permissions:
+  scopes:
+    - storage:app
+    - write:jira-work
+    - read:jira-work
+  external:
+    fetch:
+      backend:
+        - "*.ngrok.io"
+        - https://ec2-3-141-166-202.us-east-2.compute.amazonaws.com
